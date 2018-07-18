@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "namePrefix": {
-      "value": "GEN-UNIQUE-8"
+      "value": "devwecoresql01"
     },
     "vmSize": {
       "value": "Standard_D2s_v3"
@@ -15,31 +15,41 @@
       "value": 2
     },
     "existingDomainName": {
-      "value": "contoso.com"
+      "value": "agrifirm.com"
     },
     "adminUsername": {
       "value": "localadmin"
     },
     "adminPassword": {
-      "value": "GEN-PASSWORD"
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/f5a72fd5-4864-4e89-97b4-bfef28450967/resourceGroups/dev.we.core.keyvault/providers/Microsoft.KeyVault/vaults/devwecorekeyvault"
+        },
+        "secretName": "localadmin"
+      }
     },
     "svcUsername": {
       "value": "sqlService"
     },
     "svcPassword": {
-      "value": "GEN-PASSWORD"
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/f5a72fd5-4864-4e89-97b4-bfef28450967/resourceGroups/dev.we.core.keyvault/providers/Microsoft.KeyVault/vaults/devwecorekeyvault"
+        },
+        "secretName": "sqlService"
+      }
     },
     "existingVirtualNetworkRGName": {
-      "value": "infrastructure"
+      "value": "nlrdcorenetwork"
     },
     "existingVirtualNetworkName": {
-      "value": "vnet1"
+      "value": "nladvn001"
     },
     "existingSubnetName": {
-      "value": "data"
+      "value": "VLAN0760-backend_servers"
     },
     "clusterIP": {
-      "value": "192.168.0.100"
+      "value": "10.220.8.10"
     }
   }
 }
